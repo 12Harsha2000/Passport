@@ -30,7 +30,7 @@ function Passport() {
   };
   return (
     <div>
-      <h1>Paaport Application Form</h1>
+      <h1>Passport Application Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
           First Name:
@@ -110,11 +110,11 @@ function Passport() {
         <br />
 
         <label>
-          CGPA:
+          Adhar Number:
           <input
             type="tel"
-            name="number"
-            value="cgpa"
+            name="adharnumber"
+            value="adharnumber"
             onchange={handleChange}
           />
         </label>

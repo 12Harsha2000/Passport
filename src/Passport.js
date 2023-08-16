@@ -114,7 +114,7 @@ function Passport() {
           <input
             type="tel"
             name="adharnumber"
-            value="adharnumber"
+            value="number"
             onchange={handleChange}
           />
         </label>

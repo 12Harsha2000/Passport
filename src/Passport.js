@@ -110,17 +110,6 @@ function Passport() {
         <br />
 
         <label>
-          Adhar Number:
-          <input
-            type="tel"
-            name="adharnumber"
-            value="number"
-            onchange={handleChange}
-          />
-        </label>
-        <br />
-
-        <label>
           <input
             type="checkbox"
             name="checkbox"

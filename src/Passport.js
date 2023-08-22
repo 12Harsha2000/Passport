@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function Passport() {
+
     const initialFormData = {  
       firstName: '',
       Nationality: '',
@@ -34,6 +35,7 @@ function Passport() {
         },
         body: JSON.stringify(formData),
       });
+
       if (!response.ok) {
         throw new Error('Error saving form data');
       }
@@ -45,19 +47,20 @@ function Passport() {
       console.error('An error occurred:', error);
     }
   };
+
   const handleViewClick = async () => {
+
     if(savedId) {
     try {
       const response = await fetch(`http://localhost:5500/data?id=${savedId}`);
-        const fetchedData = await response.json();
-        setData(fetchedData);
-        console.log(fetchedData);
-     } catch (error) {
+      const fetchedData = await response.json();
+      setData(fetchedData);
+      console.log(fetchedData);
+     }catch (error) {
       console.error('Error fetching data:', error);
     }
   }
   };
-
   
   return (
     <div>
@@ -73,6 +76,7 @@ function Passport() {
           />
         </label>
         <br />
+
 
         <label>
           Nationality:
@@ -134,7 +138,7 @@ function Passport() {
           <textarea
             name="address"
             value={formData.address}
-            onchange={handleChange}
+            onChange={handleChange}
           />
         </label>
         <br />
@@ -152,9 +156,12 @@ function Passport() {
         <br />
 
         <button type="submit">Submit</button>
+
         {savedId && <p>Form Data: {savedId}</p>}
+
         <button onClick={handleViewClick} disabled={!savedId} id="view">View Data</button>
        {data.length > 0 && (
+
        <div>
         <h2>Fetched Data:</h2>
         <ul>
@@ -168,5 +175,5 @@ function Passport() {
       <div id="view"></div>
     </div>
   );
-}
+  }
 export default Passport;

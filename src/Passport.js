@@ -77,7 +77,6 @@ function Passport() {
         </label>
         <br />
 
-
         <label>
           Nationality:
           <input
@@ -99,7 +98,6 @@ function Passport() {
           />
         </label>
         <br />
-
 
         <label>
           Mobile number:
@@ -176,4 +174,5 @@ function Passport() {
     </div>
   );
   }
+  
 export default Passport;

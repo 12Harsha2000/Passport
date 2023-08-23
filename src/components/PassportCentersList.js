@@ -11,6 +11,6 @@ const PassportCentersList = () => {
      <li> kozhikkode </li>
    </ul>
    </div>
- )
+ )  
 }
 export default PassportCentersList

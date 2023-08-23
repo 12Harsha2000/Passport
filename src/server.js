@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 const path = require('path');
-
+  
 
 app.use(cors());
 app.get('/data', (req, res) => {

@@ -27,7 +27,7 @@ function Passport() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const response = await fetch('http://localhost:5500/submit', {
         method: 'POST',

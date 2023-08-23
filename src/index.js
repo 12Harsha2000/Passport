@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Passport from '/Passport';
+import Passport from './Passport';
 
 ReactDOM.render(
   <React.StrictMode>

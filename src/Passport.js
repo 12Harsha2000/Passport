@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PassportCenterlist from './components/PassportCentersList';
 
 function Passport() {
 
@@ -12,7 +13,7 @@ function Passport() {
 
   const [formData, setFormData] = useState(initialFormData);
   const [savedId, setSavedId] = useState(null);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   const handleChange = (event) => {
   const {name, value, type, checked } = event.target;
@@ -55,7 +56,7 @@ function Passport() {
       const response = await fetch(`http://localhost:5500/data?id=${savedId}`);
       const fetchedData = await response.json();
       setData(fetchedData);
-      console.log(fetchedData);
+      console.log(Object.entries(fetchedData));
      }catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -158,21 +159,21 @@ function Passport() {
         {savedId && <p>Form Data: {savedId}</p>}
 
         <button onClick={handleViewClick} disabled={!savedId} id="view">View Data</button>
-       {data.length > 0 && (
+       {Object.entries(data).length > 0 && (
 
        <div>
         <h2>Fetched Data:</h2>
         <ul>
-          {data.map(item => (
-            <li key={item.id}>{item.fetchedData}</li>
+          {Object.entries(data).map(item => (
+            <li key={item[0]}>{JSON.stringify(item, null, 2)}</li>
           ))}
         </ul>
+        <PassportCentersList/>
       </div>
     )}
       </form>
-      <div id="view"></div>
     </div>
-  );
+   );
   }
   
 export default Passport;

@@ -1,28 +1,43 @@
-.center-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+import React, { useState } from 'react';
+import './List.css'; 
+const List = () => {
+  const [centers, setCenters] = useState([
+    {
+      name: 'Kochi Passport Center',
+      address: '123 Main Street, Kochi',
+      timings: '9:00 AM - 5:00 PM',
+    },
+    {
+      name: 'Kottayam Passport Center',
+      address: '456 Park Avenue, Kottayam',
+      timings: '8:30 AM - 4:30 PM',
+    },
+    {
+      name: 'Kannur Passport Center',
+      address: '789 Elm Road, Kannur',
+      timings: '9:30 AM - 6:00 PM',
+    },
+    {
+      name: 'Kozhikkode Passport Center',
+      address: '567 Oak Lane, Kozhikkode',
+      timings: '10:00 AM - 7:00 PM',
+    },
+  ]);
 
-.center-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #f7f7f7;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  transition: transform 0.2s;
-}
+  return (
+    <div>
+      <h1>Passport Centers List</h1>
+      <ul>
+        {centers.map((center, index) => (
+          <li key={index}>
+            <h2>{center.name}</h2>
+            <p>{center.address}</p>
+            <p>Timings: {center.timings}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-.center-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.center-card h2 {
-  margin-top: 0;
-}
-
-.center-card p {
-  margin: 10px 0;
-}
+export default List;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './List.css';
+
 const List = () => {
   const [centers, setCenters] = useState([
     {
@@ -26,13 +26,13 @@ const List = () => {
 
   return (
     <div>
-      <h1>Passport Centers List</h1>
-      <ul>
+      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Passport Centers List</h1>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
         {centers.map((center, index) => (
-          <li key={index}>
-            <h2>{center.name}</h2>
-            <p>{center.address}</p>
-            <p>Timings: {center.timings}</p>
+          <li key={index} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', marginBottom: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+            <h2 style={{ marginTop: 0 }}>{center.name}</h2>
+            <p style={{ margin: '10px 0' }}>{center.address}</p>
+            <p style={{ margin: '0' }}>Timings: {center.timings}</p>
           </li>
         ))}
       </ul>

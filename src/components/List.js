@@ -1,6 +1,7 @@
 import React from 'react'
 
-const PassportCentersList = () => {
+const List = () => {
+  // function List() {
   return (
     <div>
       <h1> Passport Centers List </h1>
@@ -12,5 +13,5 @@ const PassportCentersList = () => {
    </ul>
    </div>
  )  
-}
-export default PassportCentersList
+};
+export default List

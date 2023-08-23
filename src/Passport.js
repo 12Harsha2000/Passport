@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PassportCenterlist from './components/PassportCentersList';
+import List from './components/List';
 
 function Passport() {
 
@@ -168,7 +168,8 @@ function Passport() {
             <li key={item[0]}>{JSON.stringify(item, null, 2)}</li>
           ))}
         </ul>
-        <PassportCentersList/>
+
+        <List />
       </div>
     )}
       </form>

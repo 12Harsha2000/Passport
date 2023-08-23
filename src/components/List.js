@@ -1,7 +1,6 @@
 import React from 'react'
 
 const List = () => {
-  // function List() {
   return (
     <div>
       <h1> Passport Centers List </h1>

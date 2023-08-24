@@ -1,7 +1,7 @@
 .center-list {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; */
   }
   
   .center-card {
@@ -26,7 +26,6 @@
     margin: 10px 0;
   }
   
-  /* Color styles for each center */
   .kochi {
     background-color: blue;
     color: white;
@@ -45,4 +44,5 @@
   .kozhikkode {
     background-color: orange;
     color: white;
-  }  
+  }
+  

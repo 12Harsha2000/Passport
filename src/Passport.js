@@ -3,6 +3,12 @@ import List from './components/List';
 
 function Passport() {
 
+  const [selectedCenter, setSelectedCenter] = useState(null);
+
+  const handleCenterSelect = (center) => {
+    setSelectedCenter(center);
+  };
+
     const initialFormData = {  
       firstName: '',
       Nationality: '',
@@ -27,6 +33,11 @@ function Passport() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const formDataWithCenter = {
+      ...formData,
+      selectedCenter: selectedCenter ? selectedCenter.name : ''
+    };  
   
     try {
       const response = await fetch('http://localhost:5500/submit', {
@@ -169,7 +180,7 @@ function Passport() {
           ))}
         </ul>
   
-        <List />
+        <List selectedCenter={selectedCenter} handleCenterSelect={handleCenterSelect} />
       </div>
     )}
       </form>

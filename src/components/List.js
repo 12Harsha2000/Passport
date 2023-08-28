@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './List.css';
 
-const List = () => {
+const List = ({ selectedCenter, handleCenterSelect }) => {
   const [centers, setCenters] = useState([
     {
       name: 'Kochi Passport Center',
@@ -34,7 +34,11 @@ const List = () => {
       <h1>Passport Centers List</h1>
       <div className="center-list">
         {centers.map((center, index) => (
-          <div key={index} className={`center-card ${center.color}`}>
+           <div
+           key={index}
+           className={`center-card ${center.color} ${center.selected ? 'selected' : ''}`}
+           onClick={() => handleCenterSelect(center)}
+          >
             <h2>{center.name}</h2>
             <p>{center.address}</p>
             <p>Timings: {center.timings}</p>

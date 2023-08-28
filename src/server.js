@@ -20,12 +20,20 @@ app.get('/data', (req, res) => {
 
 app.post('/submit', (req, res) => {
     const body = req.body;
+    const selectedCenter = body.selectedCenter || '';
     console.log({body});
+
     const id=uuidv4();
-    fs.writeFileSync(id+'.json', JSON.stringify(body));
+    const formData = {
+        ...body,
+        selectedCenter
+    };
+
+    fs.writeFileSync(id+'.json', JSON.stringify(formData));
     res.send({success: true, id: id});
 });
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
+

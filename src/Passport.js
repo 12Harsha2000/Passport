@@ -6,7 +6,6 @@ const valuesTwo = ["Name: Kottayam Passport Center", "Address : 456 Park Avenue,
 const valuesThree = ["Name: Kannur Passport Center", "Address : 789 Elm Road, Kannur", "Timings : 9:30 AM - 6:00 PM"]
 const valuesFour = ["Name: Kozhikkode Passport Center", "Address : 567 Oak Lane, Kozhikkode", "Timings : 10:00 AM - 7:00 PM"]
 
-
 function Passport() {
 
     const initialFormData = {  
@@ -17,7 +16,6 @@ function Passport() {
       checkbox: '',
       passportcenters: "", 
   };
-  
   
   const [formData, setFormData] = useState(initialFormData);
   const [savedId, setSavedId] = useState(null);

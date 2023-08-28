@@ -14,6 +14,7 @@ function Passport() {
       phone: '',
       gender: '',
       checkbox: '',
+      passportcenters: '', 
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -147,10 +148,10 @@ function Passport() {
         </label>
         <br />
         <div>
-              <List header="Center 1" values={valuesOne}/>
-              <List header="Center 2" values={valuesTwo}/>
-              <List header="Center 3" values={valuesThree}/>
-              <List header="Center 4" values={valuesFour}/>
+              <List header="Center 1" values={valuesOne}  handleChange={handleChange}  formData={formData}/>
+              <List header="Center 2" values={valuesTwo}  handleChange={handleChange}  formData={formData}/>
+              <List header="Center 3" values={valuesThree} handleChange={handleChange}  formData={formData}/>
+              <List header="Center 4" values={valuesFour}  handleChange={handleChange}  formData={formData}/>
             </div>
 
         <label>

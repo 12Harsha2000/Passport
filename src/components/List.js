@@ -3,7 +3,7 @@ import './List.css';
 
 function List(props) {
 
-  const { header,values  } = props;
+  const { header,values,handleChange,formData  } = props;
 
   return (
     <div className="wrapper">
@@ -11,9 +11,11 @@ function List(props) {
           <input
           type="radio"
           id="radioOption"
-          name="passport centers"
-          value={FormData.passportcenters}
-        
+          name="passportcenters"
+          value={header}
+          checked = {formData.passportcenters==header}
+          onChange = {handleChange}
+          
         />
         
          <h1>{header}</h1>

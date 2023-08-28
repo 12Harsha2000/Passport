@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import List from './components/List';
+import List from './List'; 
 
 const valuesOne = ["Name: Kochi Passport Center", "Address : 123 Main Street, Kochi", "Timings : 9:00 AM - 5:00 PM"]
 const valuesTwo = ["Name: Kottayam Passport Center", "Address : 456 Park Avenue, Kottayam", "Timings : 8:30 AM - 6:00 PM"]
 const valuesThree = ["Name: Kannur Passport Center", "Address : 789 Elm Road, Kannur", "Timings : 9:30 AM - 6:00 PM"]
-const valuesFour = ["Name: Kozhikkode Passport Center", "Address : 567 Oak Lane, Kozhikkode", "Timings : 10:00 AM - 7:00 PM"] 
+const valuesFour = ["Name: Kozhikkode Passport Center", "Address : 567 Oak Lane, Kozhikkode", "Timings : 10:00 AM - 7:00 PM"]
+
 
 function Passport() {
 
@@ -14,9 +15,10 @@ function Passport() {
       phone: '',
       gender: '',
       checkbox: '',
-      passportcenters: '', 
+      passportcenters: "", 
   };
-
+  
+  
   const [formData, setFormData] = useState(initialFormData);
   const [savedId, setSavedId] = useState(null);
   const [data, setData] = useState({});
@@ -148,10 +150,10 @@ function Passport() {
         </label>
         <br />
         <div>
-              <List header="Center 1" values={valuesOne}  handleChange={handleChange}  formData={formData}/>
-              <List header="Center 2" values={valuesTwo}  handleChange={handleChange}  formData={formData}/>
-              <List header="Center 3" values={valuesThree} handleChange={handleChange}  formData={formData}/>
-              <List header="Center 4" values={valuesFour}  handleChange={handleChange}  formData={formData}/>
+              <List heading="Center 1" value={valuesOne}  handleChange={handleChange}  formData={formData}/>
+              <List heading="Center 2" value={valuesTwo}  handleChange={handleChange}  formData={formData}/>
+              <List heading="Center 3" value={valuesThree}  handleChange={handleChange}  formData={formData}/>
+              <List heading="Center 4" value={valuesFour} handleChange={handleChange}  formData={formData}/>
             </div>
 
         <label>
@@ -169,16 +171,16 @@ function Passport() {
         <button type="submit">Submit</button>
         {savedId && <p>Form Data: {savedId}</p>}
         <button onClick={handleViewClick} disabled={!savedId} id="view">View Data</button>
-       {Object.entries(data).length > 0 && (
+        {Object.entries(data).length > 0 && (
 
-       <div>
+        <div>
         <h2>Fetched Data:</h2>
         <ul>
           {Object.entries(data).map(item => (
             <li key={item[0]}>{JSON.stringify(item, null, 2)}</li>
           ))}
         </ul>
-  
+
         <List />
       </div>
     )}
@@ -189,4 +191,3 @@ function Passport() {
   }
    
 export default Passport;
-

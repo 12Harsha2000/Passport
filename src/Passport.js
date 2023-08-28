@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import List from './components/List';
 
+const valuesOne = ["Name: Kochi Passport Center", "Address : 123 Main Street, Kochi", "Timings : 9:00 AM - 5:00 PM"]
+const valuesTwo = ["Name: Kottayam Passport Center", "Address : 456 Park Avenue, Kottayam", "Timings : 8:30 AM - 6:00 PM"]
+const valuesThree = ["Name: Kannur Passport Center", "Address : 789 Elm Road, Kannur", "Timings : 9:30 AM - 6:00 PM"]
+const valuesFour = ["Name: Kozhikkode Passport Center", "Address : 567 Oak Lane, Kozhikkode", "Timings : 10:00 AM - 7:00 PM"] 
+
 function Passport() {
 
     const initialFormData = {  
@@ -141,6 +146,12 @@ function Passport() {
           />
         </label>
         <br />
+        <div>
+              <List header="Center 1" values={valuesOne}/>
+              <List header="Center 2" values={valuesTwo}/>
+              <List header="Center 3" values={valuesThree}/>
+              <List header="Center 4" values={valuesFour}/>
+            </div>
 
         <label>
           <input
@@ -155,9 +166,7 @@ function Passport() {
         <br />
 
         <button type="submit">Submit</button>
-
         {savedId && <p>Form Data: {savedId}</p>}
-
         <button onClick={handleViewClick} disabled={!savedId} id="view">View Data</button>
        {Object.entries(data).length > 0 && (
 
@@ -173,8 +182,10 @@ function Passport() {
       </div>
     )}
       </form>
+      <div id="value"></div>
     </div>
    );
   }
    
 export default Passport;
+

@@ -1,13 +1,18 @@
 *{
   width: auto;
 }
+.List{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
 .wrapper{
   min-height: 100px;
   width: 350px;
   border: 2px solid blue;
   border-radius: 10px;
-  background: grey;
+  background: grey; 
   margin-top: 10px;
   padding-left: 0px;
   padding-right: 0px;
@@ -17,3 +22,10 @@
   display: none;
 }
 
+h1{
+  padding-left: 70px;
+}
+  
+ul {
+  padding-left: 100px;
+}

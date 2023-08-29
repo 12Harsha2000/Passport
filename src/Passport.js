@@ -56,7 +56,6 @@ function Passport() {
   };
 
   const handleViewClick = async () => {
-
     if(savedId) {
     try {
       const response = await fetch(`http://localhost:5500/data?id=${savedId}`);
@@ -147,12 +146,13 @@ function Passport() {
           />
         </label>
         <br />
+
         <div>
-              <List heading="Center 1" value={valuesOne}  handleChange={handleChange}  formData={formData}/>
-              <List heading="Center 2" value={valuesTwo}  handleChange={handleChange}  formData={formData}/>
-              <List heading="Center 3" value={valuesThree}  handleChange={handleChange}  formData={formData}/>
-              <List heading="Center 4" value={valuesFour} handleChange={handleChange}  formData={formData}/>
-            </div>
+          <List heading="Center 1" value={valuesOne}  handleChange={handleChange}  formData={formData}/>
+          <List heading="Center 2" value={valuesTwo}  handleChange={handleChange}  formData={formData}/>
+          <List heading="Center 3" value={valuesThree}  handleChange={handleChange}  formData={formData}/>
+          <List heading="Center 4" value={valuesFour}  handleChange={handleChange}  formData={formData}/>
+        </div>
 
         <label>
           <input
@@ -162,12 +162,12 @@ function Passport() {
             onChange={handleChange}
             required
           />
-          I have read and agree to all terms and conditions.
+          I have read and agree to all the <a href="">Terms & Conditions</a>
         </label>
         <br />
 
         <button type="submit">Submit</button>
-        {savedId && <p>Form Data: {savedId}</p>}
+        {savedId && <p>Form Data saved{savedId}</p>}
         <button onClick={handleViewClick} disabled={!savedId} id="view">View Data</button>
         {Object.entries(data).length > 0 && (
 
@@ -178,8 +178,6 @@ function Passport() {
             <li key={item[0]}>{JSON.stringify(item, null, 2)}</li>
           ))}
         </ul>
-
-        <List />
       </div>
     )}
       </form>

@@ -1,10 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
 import './List.css';
 
 function List(props) {
-
   const { heading, value, handleChange, formData  } = props;
 
   return (
@@ -17,7 +14,6 @@ function List(props) {
           checked={formData.passportcenters == heading}
           onChange={handleChange}
           />
-        
          <h1>{heading}</h1>
          <ul>
          {
